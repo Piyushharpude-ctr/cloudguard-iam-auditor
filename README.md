@@ -89,6 +89,12 @@ The application does not request or store cloud credentials.
 
 GET /health
 
+## Current Status
+
+The CloudGuard CI/CD pipeline automatically validates code,
+builds the Docker image and triggers deployment after
+successful checks.
+
 ## Running Locally
 
 ## Example API Request
