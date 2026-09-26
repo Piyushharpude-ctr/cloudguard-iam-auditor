@@ -8,6 +8,13 @@ app.use(express.static('public'));
 
 // Sample IAM access records.
 // This is in-memory data for our CCA project.
+
+const projectInfo = {
+  name: 'CloudGuard',
+  purpose: 'IAM Access Risk Auditor',
+  securityModel: 'Least Privilege'
+};
+
 const accessRecords = [
   {
     id: 1,
@@ -161,6 +168,9 @@ app.get('/', (req, res) => {
         <main class="container">
 
           <section class="hero">
+          <p>
+  Security model: ${escapeHtml(projectInfo.securityModel)}
+</p>
             <h2>Cloud IAM Access Risk Assessment</h2>
             <p>
               CloudGuard checks IAM-style permissions and identifies
