@@ -66,6 +66,17 @@ body {
   margin-top: 0;
 }
 
+.card h2 {
+  letter-spacing: 0.2px;
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
