@@ -86,8 +86,14 @@ function validateAccessInput(data) {
   const allowedResources = ['S3', 'Database', 'EC2', 'API'];
   const allowedPermissions = ['Read', 'Write', 'Delete'];
 
+  // 1. Minimum check (catches short or missing names)
   if (!data.user || data.user.trim().length < 2) {
     return 'User name must contain at least 2 characters.';
+  }
+
+  // 2. Maximum check (catches names that are too long)
+  if (data.user.trim().length > 50) {
+    return 'User name must not exceed 50 characters.';
   }
 
   if (!allowedRoles.includes(data.role)) {
