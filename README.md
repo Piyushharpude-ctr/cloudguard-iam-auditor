@@ -77,6 +77,14 @@ GET /api/access
 
 POST /access
 
+## Security Scope
+
+CloudGuard is an educational simulation of IAM access auditing.
+
+It does not connect to real AWS, Azure or Google Cloud accounts.
+
+The application does not request or store cloud credentials.
+
 ### Health Check
 
 GET /health
