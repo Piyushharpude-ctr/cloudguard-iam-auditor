@@ -110,3 +110,26 @@ test('POST /access should reject invalid input', async () => {
   assert.equal(body.success, false);
   assert.ok(body.error);
 });
+
+test('POST /access should reject an invalid role', async () => {
+  const response = await fetch(`${baseUrl}/access`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      user: 'ValidUser',
+      role: 'UnknownRole',
+      environment: 'Production',
+      resource: 'S3',
+      permission: 'Read'
+    })
+  });
+
+  assert.equal(response.status, 400);
+
+  const body = await response.json();
+
+  assert.equal(body.success, false);
+  assert.equal(body.error, 'Invalid role.');
+});
