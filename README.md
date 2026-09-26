@@ -82,3 +82,14 @@ POST /access
 GET /health
 
 ## Running Locally
+
+## Example API Request
+
+```json
+{
+  "user": "Rahul",
+  "role": "Developer",
+  "environment": "Production",
+  "resource": "S3",
+  "permission": "Delete"
+}
