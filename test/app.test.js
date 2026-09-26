@@ -50,7 +50,7 @@ test('GET /health should return healthy status', async () => {
 
   const body = await response.json();
 
-  assert.equal(body.status, 'BROKEN');
+  assert.equal(body.status, 'healthy');
 });
 
 test('GET /api/access should return access records', async () => {
